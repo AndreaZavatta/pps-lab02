@@ -2,6 +2,10 @@ package u02
 
 object Currying extends App :
 
+  def divide(x: Double, y: Double): Double = x / y
+
+  def curriedDivide(x: Double)(y: Double): Double = x / y
+
   // standard function with no currying
   def mult(x: Double, y: Double): Double = x * y
 
