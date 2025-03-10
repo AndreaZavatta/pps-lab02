@@ -51,3 +51,9 @@ class Exercise2Test:
     val multTwo: (Int => Int) = x => x * 2
     val composedFunction = compose(sumOne, multTwo)
     assertEquals(7, composedFunction(3))
+
+  @Test def testCompositionGeneric(): Unit =
+    val sumOne: (Int => Int) = x => x + 1
+    val multTwo: (Int => Int) = x => x * 2
+    val composedFunction = composeGeneric(sumOne, multTwo)
+    assertEquals(7, composedFunction(3))

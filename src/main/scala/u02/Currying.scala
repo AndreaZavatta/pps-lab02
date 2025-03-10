@@ -7,7 +7,7 @@ object Currying extends App :
   def curriedDivide(x: Double)(y: Double): Double = x / y
 
   // standard function with no currying
-  def mult(x: Double, y: Double): Double = x * y
+    def mult(x: Double, y: Double): Double = x * y
 
   // function with currying
   // curriedMult has actually type: Double => (Double => Double)
