@@ -22,3 +22,5 @@ object Exercise2 extends App :
   val lessThanCurriedVal: Int => Int => Boolean => Boolean = x => y => z => (x <= y) == z
 
   val lessThanNonCurriedVal: (Int, Int, Boolean) => Boolean = _ <= _ == _
+
+  def compose(f: Int => Int, g: Int => Int): Int => Int = x => f(g(x))

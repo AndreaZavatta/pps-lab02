@@ -45,3 +45,9 @@ class Exercise2Test:
   @Test def testLessThanNonCurriedVal(): Unit =
     assertTrue(lessThanNonCurriedVal(3, 4, true))
     assertTrue(lessThanNonCurriedVal(4, 3, false))
+
+  @Test def testComposition(): Unit =
+    val sumOne: (Int => Int) = x => x + 1
+    val multTwo: (Int => Int) = x => x * 2
+    val composedFunction = compose(sumOne, multTwo)
+    assertEquals(7, composedFunction(3))
