@@ -28,3 +28,4 @@ class CurryingTest:
     val curriedMult20 = curriedMult(20.0)
     assertEquals(40.0, curriedMult20(2.0), delta)
   }
+  
