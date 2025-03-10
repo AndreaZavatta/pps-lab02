@@ -30,6 +30,10 @@ class Exercise2Test:
     assertTrue(isFull("test"))
     assertFalse(isEmpty("test"))
 
-  @Test def testLessThan(): Unit =
+  @Test def testLessThanNonCurried(): Unit =
     assertTrue(lessThanNonCurried(3, 4, true))
     assertTrue(lessThanNonCurried(4, 3, false))
+
+  @Test def testLessThanCurried(): Unit =
+    assertTrue(lessThanCurried(3)(4)(true))
+    assertTrue(lessThanCurried(4)(3)(false))

@@ -16,3 +16,5 @@ object Exercise2 extends App :
   def genericNeg[X](fun: X => Boolean): (X => Boolean) = !fun(_)
 
   def lessThanNonCurried(x: Int, y: Int, z: Boolean): Boolean = (x <= y) == z
+
+  def lessThanCurried(x: Int) (y: Int) (z: Boolean): Boolean = (x <= y) == z
