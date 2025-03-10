@@ -20,4 +20,5 @@ object Exercise2 extends App :
   def lessThanCurried(x: Int) (y: Int) (z: Boolean): Boolean = (x <= y) == z
   
   val lessThanCurriedVal: Int => Int => Boolean => Boolean = x => y => z => (x <= y) == z
-  
+
+  val lessThanNonCurriedVal: (Int, Int, Boolean) => Boolean = (x, y, z) => (x <= y) == z
