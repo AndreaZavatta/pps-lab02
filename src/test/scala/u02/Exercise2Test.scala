@@ -23,3 +23,9 @@ class Exercise2Test:
     val isFull = negVal(isEmpty)
     assertTrue(isFull("test"))
     assertFalse(isEmpty("test"))
+
+  @Test def testGenericNeg(): Unit =
+    val isEmpty: (String => Boolean) = str => str.isEmpty
+    val isFull = genericNeg[String](isEmpty)
+    assertTrue(isFull("test"))
+    assertFalse(isEmpty("test"))
