@@ -15,10 +15,10 @@ object Exercise2 extends App :
 
   def genericNeg[X](fun: X => Boolean): (X => Boolean) = !fun(_)
 
-  def lessThanNonCurried(x: Int, y: Int, z: Boolean): Boolean = (x <= y) == z
+  def lessThanNonCurried: (Int, Int, Boolean) => Boolean = _ <= _ == _
 
-  def lessThanCurried(x: Int) (y: Int) (z: Boolean): Boolean = (x <= y) == z
-  
+  def lessThanCurried(x: Int) (y: Int) (z: Boolean): Boolean = x <= y == z
+
   val lessThanCurriedVal: Int => Int => Boolean => Boolean = x => y => z => (x <= y) == z
 
-  val lessThanNonCurriedVal: (Int, Int, Boolean) => Boolean = (x, y, z) => (x <= y) == z
+  val lessThanNonCurriedVal: (Int, Int, Boolean) => Boolean = _ <= _ == _
