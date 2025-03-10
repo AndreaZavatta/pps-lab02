@@ -37,3 +37,7 @@ class Exercise2Test:
   @Test def testLessThanCurried(): Unit =
     assertTrue(lessThanCurried(3)(4)(true))
     assertTrue(lessThanCurried(4)(3)(false))
+
+  @Test def testLessThanCurriedVal(): Unit =
+    assertTrue(lessThanCurriedVal(3)(4)(true))
+    assertTrue(lessThanCurriedVal(4)(3)(false))
