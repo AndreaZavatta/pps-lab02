@@ -64,3 +64,10 @@ class Exercise2Test:
     val divideTwo: (Int => Int) = x => x / 2
     val composedFunction = composeThree(multTwo, sumOne, divideTwo)
     assertEquals(12, composedFunction(10))
+
+  @Test def testCompositionThreeWithComposeGeneric(): Unit =
+    val sumOne: (Int => Int) = x => x + 1
+    val multTwo: (Int => Int) = x => x * 2
+    val divideTwo: (Int => Int) = x => x / 2
+    val composedFunction = composeThreeWithComposeGeneric(multTwo, sumOne, divideTwo)
+    assertEquals(12, composedFunction(10))

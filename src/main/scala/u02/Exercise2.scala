@@ -29,5 +29,5 @@ object Exercise2 extends App :
   
   def composeThree[A,B,C,D](f: C => D, g: B => C, h: A => B): A => D = x => f(g(h(x)))
 
-  
+  def composeThreeWithComposeGeneric[A, B, C, D](f: C => D, g: B => C, h: A => B): A => D = x => f(composeGeneric(g, h)(x))
 
