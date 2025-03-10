@@ -11,3 +11,15 @@ class Exercise2Test:
 
   @Test def testPositiveVal(): Unit =
     assertEquals("Positive", positiveVal(20))
+
+  @Test def testNegFun(): Unit =
+    val isEmpty: (String   => Boolean ) = str => str.isEmpty
+    val isFull = neg(isEmpty)
+    assertTrue(isFull("test"))
+    assertFalse(isEmpty("test"))
+
+  @Test def testNegVal(): Unit =
+    val isEmpty: (String   => Boolean ) = str => str.isEmpty
+    val isFull = negVal(isEmpty)
+    assertTrue(isFull("test"))
+    assertFalse(isEmpty("test"))
