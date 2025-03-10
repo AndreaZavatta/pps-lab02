@@ -6,11 +6,11 @@ import Currying.*
 
 class CurryingTest:
 
-  @Test def testDevideWithNoCurrying() =
+  @Test def testDevideWithNoCurrying(): Unit =
     val delta = 0.0001
     assertEquals(10, divide(20.0,2.0), delta)
 
-  @Test def testDevideWithCurrying() =
+  @Test def testDevideWithCurrying(): Unit =
     val delta = 0.0001
     assertEquals(10, curriedDivide(20.0)(2.0), delta)
 
@@ -20,11 +20,11 @@ class CurryingTest:
     assertEquals(10, curriedDivide20(2.0), delta)
   }
 
-  @Test def testMultWithNoCurrying() =
+  @Test def testMultWithNoCurrying(): Unit =
     val delta = 0.0001
     assertEquals(40.0, mult(20.0, 2.0), delta)
 
-  @Test def testMultWithCurrying() =
+  @Test def testMultWithCurrying(): Unit =
     val delta = 0.0001
     assertEquals(40.0, curriedMult(20.0)(2.0), delta)
 
