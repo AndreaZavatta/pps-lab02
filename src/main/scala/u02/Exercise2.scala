@@ -14,3 +14,5 @@ object Exercise2 extends App :
   val negVal: (String => Boolean ) => ( String => Boolean ) = f => !f(_)
 
   def genericNeg[X](fun: X => Boolean): (X => Boolean) = !fun(_)
+
+  def lessThanNonCurried(x: Int, y: Int, z: Boolean): Boolean = (x <= y) == z

@@ -29,3 +29,7 @@ class Exercise2Test:
     val isFull = genericNeg[String](isEmpty)
     assertTrue(isFull("test"))
     assertFalse(isEmpty("test"))
+
+  @Test def testLessThan(): Unit =
+    assertTrue(lessThanNonCurried(3, 4, true))
+    assertTrue(lessThanNonCurried(4, 3, false))
