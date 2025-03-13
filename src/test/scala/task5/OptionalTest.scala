@@ -3,6 +3,7 @@ package task5
 import org.junit.*
 import org.junit.Assert.*
 import Optionals.*
+import task5.Optionals.Optional.*
 
 class OptionalTest:
   @Test def emptyOptionalShouldBeEmpty(): Unit = {
@@ -36,4 +37,24 @@ class OptionalTest:
     val nonEmpty = Optional.Maybe(0)
     val result = Optional.map(nonEmpty, _ + 1)
     assertEquals(1, Optional.orElse(result, 1))
+  }
+
+  @Test def mapShouldReturnTrue(): Unit = {
+    assertEquals(Maybe(true), map(Maybe(5), _ > 2))
+  }
+
+  @Test def mapShouldReturnEmpty(): Unit = {
+    assertEquals(Empty(), map(Empty[Int](), _ > 2))
+  }
+
+  @Test def filterShouldReturnMaybeIfFilterIsVerified(): Unit = {
+    assertEquals(Maybe(5), filter(Maybe(5), _ > 2))
+  }
+
+  @Test def filterShouldReturnEmptyIfFilterIsNotVerified(): Unit = {
+    assertEquals(Optional.Empty(), filter(Maybe(5), _ > 8))
+  }
+
+  @Test def filterShouldReturnEmptyIfTheValueIsEmpty(): Unit = {
+    println(filter(Empty[Int](), _ > 2))
   }
