@@ -3,11 +3,11 @@ package u02
 object Exercise4 extends App :
 
   case class Literal(a: Int)
-  
-  case class Add(left: Literal, right: Literal)
-  
-  case class Multiply(left: Literal, right: Literal)
-  
+
+  case class Add(left: Any, right: Any)
+
+  case class Multiply(left: Any, right: Any)
+
   def eval(expr: Any): Int = expr match {
     case Literal(value) => value
     case Add(left, right) => eval(left) + eval(right)

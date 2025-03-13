@@ -12,3 +12,6 @@ class Exercise4Test:
 
   @Test def testMultiplyExpression(): Unit =
     assertEquals(12, eval(Multiply(Literal(3), Literal(4))))
+
+  @Test def testMultiplyAndSumExpression(): Unit =
+    assertEquals(11, eval(Add(Multiply(Literal(2), Literal(4)), Literal(3))))
