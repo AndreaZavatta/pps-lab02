@@ -17,3 +17,11 @@ object Exercise4 extends App :
     case Multiply(left, right) => eval(left) * eval(right)
     case _ => throw new IllegalArgumentException("Invalid expression")
   }
+
+object OperationOnExpression extends App:
+
+  def evaluate(expr: Expr): Int = expr match
+    case Literal(value) => value
+    case Add(left, right) => evaluate(left) + evaluate(right)
+    case Multiply(left, right) => evaluate(left) * evaluate(right)
+
