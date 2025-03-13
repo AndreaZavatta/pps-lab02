@@ -25,3 +25,7 @@ object OperationOnExpression extends App:
     case Add(left, right) => evaluate(left) + evaluate(right)
     case Multiply(left, right) => evaluate(left) * evaluate(right)
 
+  def show(expr: Expr): String = expr match
+    case Literal(value) => value.toString
+    case Add(left, right) => "("+show(left)+" + "+show(right) +")"
+    case Multiply(left, right) => "("+show(left)+" * "+show(right) +")"
