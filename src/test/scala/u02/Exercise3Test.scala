@@ -12,3 +12,6 @@ class Exercise3Test:
 
   @Test def testPowerTailRecursive(): Unit =
     assertEquals(27, powerTail(3, 3), bias)
+
+  @Test def testReverseNumberRecursive(): Unit =
+    assertEquals(34566, reverseInteger(66543))
